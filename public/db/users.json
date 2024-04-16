@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "firstName": "Angela",
+    "lastName": "Gray",
+    "avatar": "angela-gray.webp"
+  },
+  {
+    "id": 2,
+    "firstName": "Anna",
+    "lastName": "Kim",
+    "avatar": "anna-kim.webp"
+  },
+  {
+    "id": 3,
+    "firstName": "Jacob",
+    "lastName": "Thompson",
+    "avatar": "jacob-thompson.webp"
+  },
+  {
+    "id": 4,
+    "firstName": "Kimberly",
+    "lastName": "Smith",
+    "avatar": "kimberly-smith.webp"
+  },
+  {
+    "id": 5,
+    "firstName": "Mark",
+    "lastName": "Webber",
+    "avatar": "mark-webber.webp"
+  },
+  {
+    "id": 6,
+    "firstName": "Nathan",
+    "lastName": "Peterson",
+    "avatar": "nathan-peterson.webp"
+  },
+  {
+    "id": 7,
+    "firstName": "Rizky",
+    "lastName": "Hasanuddin",
+    "avatar": "rizky-hasanuddin.webp"
+  }
+]

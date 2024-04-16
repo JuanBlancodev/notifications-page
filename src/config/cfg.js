@@ -1,2 +1,2 @@
-export const PATH_AVATAR            =           'src/assets/avatar/'
-export const PATH_PICTURE           =           'src/assets/picture/'
+export const PATH_AVATAR            =           '/avatar/'
+export const PATH_PICTURE           =           '/picture/'

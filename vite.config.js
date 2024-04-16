@@ -12,6 +12,7 @@ export default defineConfig({
         autoprefixer({})
       ]
     }
-  },
-  base: 'https://juanblancodev.github.io/notifications-page/'
+  }
 })
+
+// base: 'https://juanblancodev.github.io/notifications-page/'
