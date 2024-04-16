@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { PATH_AVATAR } from '../../config/cfg'
 
 const AvatarContainer = styled.div`
   min-width: 40px;
@@ -24,7 +23,7 @@ const Img = styled.img`
 const Avatar = ({ avatar }) => {
   return (
     <AvatarContainer>
-      <Img src={PATH_AVATAR + avatar} alt={avatar} />
+      <Img src={`avatar/${avatar}`} alt={avatar} />
     </AvatarContainer>
   )
 }

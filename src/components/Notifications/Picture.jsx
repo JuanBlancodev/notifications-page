@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import PropTypes from 'prop-types'
-import { PATH_PICTURE } from "../../config/cfg"
 
 const Container = styled.div`
   width: 50px;
@@ -18,7 +17,7 @@ const Img = styled.img`
 const Picture = ({ picture }) => {
   return (
     <Container>
-      <Img src={PATH_PICTURE + picture} alt={picture} />
+      <Img src={`picture/${picture}`} alt={picture} />
     </Container>
   )
 }

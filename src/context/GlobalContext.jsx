@@ -12,7 +12,7 @@ const GlobalContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try{
-        const { data } = await axios.get('/db/users.json')
+        const { data } = await axios.get('db/users.json')
 
         if(!Array.isArray(data)){
           throw Error()
@@ -30,7 +30,7 @@ const GlobalContextProvider = ({ children }) => {
   useEffect(() => {
     const Notifications = async () => {
       try{
-        const { data } = await axios.get('/db/notifications.json')
+        const { data } = await axios.get('db/notifications.json')
 
         if(!Array.isArray(data)){
           throw Error()
