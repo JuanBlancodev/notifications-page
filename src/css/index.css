@@ -114,3 +114,7 @@ p{
 .bg-light-grayish-blue-2{
   background-color: var(--color-light-grayish-blue-2);
 }
+
+.bg-white{
+  background-color: var(--color-white);
+}
