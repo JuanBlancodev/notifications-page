@@ -68,7 +68,7 @@ Error generating stack: `+o.message+`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`,Pp=({avatar:e})=>F.jsx(Ug,{children:F.jsx(Bg,{src:"/avatar/"+e,alt:e})});Pp.propTypes={avatar:ln.string.isRequired};const Op=({firstName:e,lastName:n})=>F.jsxs("h2",{className:"fs-small fw-bold inline mr-1",children:[e," ",n]});Op.propTypes={firstName:ln.string.isRequired,lastName:ln.string.isRequired};const Rp=({typeNotification:e,messageNotification:n})=>{var t;return F.jsxs("p",{className:"dark-grayish-blue fw-normal inline",children:[(t=[{type:"reaction",text:"reacted to your recent post"},{type:"follower",text:"followed you"},{type:"join_group",text:"has joined your group"},{type:"private_message",text:"sent you a private message"},{type:"comment_on_picture",text:"commented on your picture"},{type:"left_group",text:"left the group"}].find(r=>r.type===e))==null?void 0:t.text,n&&F.jsx("span",{className:"info fw-bold ml-1 "+(e.includes("group")?"blue":""),children:n})]})};Rp.propTypes={typeNotification:ln.string.isRequired,messageNotification:ln.string};const $g=fe.div`
+`,Pp=({avatar:e})=>F.jsx(Ug,{children:F.jsx(Bg,{src:`avatar/${e}`,alt:e})});Pp.propTypes={avatar:ln.string.isRequired};const Op=({firstName:e,lastName:n})=>F.jsxs("h2",{className:"fs-small fw-bold inline mr-1",children:[e," ",n]});Op.propTypes={firstName:ln.string.isRequired,lastName:ln.string.isRequired};const Rp=({typeNotification:e,messageNotification:n})=>{var t;return F.jsxs("p",{className:"dark-grayish-blue fw-normal inline",children:[(t=[{type:"reaction",text:"reacted to your recent post"},{type:"follower",text:"followed you"},{type:"join_group",text:"has joined your group"},{type:"private_message",text:"sent you a private message"},{type:"comment_on_picture",text:"commented on your picture"},{type:"left_group",text:"left the group"}].find(r=>r.type===e))==null?void 0:t.text,n&&F.jsx("span",{className:"info fw-bold ml-1 "+(e.includes("group")?"blue":""),children:n})]})};Rp.propTypes={typeNotification:ln.string.isRequired,messageNotification:ln.string};const $g=fe.div`
   border-radius: 5px;
   border: 1px solid var(--color-grayish-blue);
   background-color: var(--color-very-light-grayish-blue);
@@ -88,7 +88,7 @@ Error generating stack: `+o.message+`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`,zp=({picture:e})=>F.jsx(Hg,{children:F.jsx(Vg,{src:"/picture/"+e,alt:e})});zp.propTypes={picture:ln.string.isRequired};const Wg=fe.section`
+`,zp=({picture:e})=>F.jsx(Hg,{children:F.jsx(Vg,{src:`picture/${e}`,alt:e})});zp.propTypes={picture:ln.string.isRequired};const Wg=fe.section`
   min-height: 70px;
   border-radius: 5px;
 
