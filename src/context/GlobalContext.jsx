@@ -1,6 +1,20 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import styled from 'styled-components'
+import ReactLoading from 'react-loading'
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+`
 
 const GlobalContext = createContext()
 
@@ -49,7 +63,10 @@ const GlobalContextProvider = ({ children }) => {
     return <h1>{ error }</h1>
   }
   else if(users === undefined || notifications === undefined){
-    return null
+    return <Wrapper>
+      <ReactLoading type="spin" color="#147af4" width="50px" height="50px" />
+      <p className='fs-medium fw-normal grayish-blue'>Loading content, please wait</p>
+    </Wrapper>
   }
 
   const markAsRead = () => {
