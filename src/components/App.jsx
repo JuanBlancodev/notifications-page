@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import Header from './Header'
-import Notifications from './Notifications'
+import ContainerNotifications from './Notifications/ContainerNotifications'
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   padding: 25px 15px;
 
@@ -22,7 +22,7 @@ const App = () => {
     <Wrapper className='bg-white'>
       <Content>
         <Header />
-        <Notifications />
+        <ContainerNotifications />
       </Content>
     </Wrapper>
   )

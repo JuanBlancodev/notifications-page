@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Notification from './Notification'
-import useGlobalContext from '../hooks/useGlobalContext'
+import useGlobalContext from '../../hooks/useGlobalContext'
 
 const Wrapper = styled.main`
   height: 100%;
@@ -10,7 +10,7 @@ const Wrapper = styled.main`
   gap: 10px;
 `
 
-const Notifications = () => {
+const ContainerNotifications = () => {
   const { notifications, users } = useGlobalContext()
 
   return (
@@ -26,4 +26,4 @@ const Notifications = () => {
   )
 }
 
-export default Notifications
+export default ContainerNotifications
