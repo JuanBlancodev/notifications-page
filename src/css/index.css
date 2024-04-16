@@ -7,6 +7,7 @@
   --font-weight-semibold: 700;
   --font-weight-bold: 800;
 
+  --font-size-xsmall: 14px;
   --font-size-small: 16px;
   --font-size-medium: 20px;
   --font-size-large: 24px;
@@ -56,6 +57,10 @@ p{
 }
 
 /* Font size */
+.fs-xsmall{
+  font-size: var(--font-size-xsmall);
+}
+
 .fs-small{
   font-size: var(--font-size-small);
 }
@@ -107,6 +112,14 @@ p{
 }
 
 /* Background color */
+.bg-red{
+  background-color: var(--color-red);
+}
+
+.bg-very-light-grayish-blue{
+  background-color: var(--color-very-light-grayish-blue);
+}
+
 .bg-light-grayish-blue-1{
   background-color: var(--color-light-grayish-blue-1);
 }
@@ -121,4 +134,9 @@ p{
 
 .bg-blue{
   background-color: var(--color-blue);
+}
+
+/* Gap */
+.ms-1{
+  margin-left: 5px;
 }
