@@ -43,7 +43,7 @@ const GlobalContextProvider = ({ children }) => {
     }
 
     Notifications()
-  }), []
+  }, [])
 
   if(error !== null){
     return <h1>{ error }</h1>

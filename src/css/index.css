@@ -118,3 +118,7 @@ p{
 .bg-white{
   background-color: var(--color-white);
 }
+
+.bg-blue{
+  background-color: var(--color-blue);
+}

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Header from './Header'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ const App = () => {
   return (
     <Wrapper className='bg-white'>
       <Content>
-
+        <Header />
       </Content>
     </Wrapper>
   )
