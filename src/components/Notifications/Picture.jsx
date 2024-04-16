@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { PATH_PICTURE } from "../../config/cfg"
 
 const Container = styled.div`
-  width: 60px;
-  height: 40px;
-  overflow: hiddden;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  overflow: hidden;
 `
 
 const Img = styled.img` 

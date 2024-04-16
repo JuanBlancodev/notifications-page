@@ -17,6 +17,10 @@ const Container = styled.section`
   padding: 10px 5px;
 `
 
+const Content = styled.div`  
+ flex: 1;
+`
+
 const Alert = styled.span`
   display: inline-block;
   width: 10px;
@@ -28,7 +32,7 @@ const Notification = ({ info, user }) => {
   return (
     <Container className={!info.seen ? 'bg-light-grayish-blue-1' : ''}>
       <Avatar avatar={user.avatar} />
-      <div>
+      <Content>
         <UserName firstName={user.firstName} lastName={user.lastName} />
         <Subject typeNotification={info.type} messageNotification={info.message} />
           
@@ -37,7 +41,7 @@ const Notification = ({ info, user }) => {
         <p className='fs-xsmall fw-normal grayish-blue mt-1'>{ info.timeAgo }</p>
 
         { info.type === 'private_message' && <PrivateMessage message={info.privateMessage} /> }
-      </div>
+      </Content>
 
       { info.picture && <Picture picture={info.picture} /> }
     </Container>

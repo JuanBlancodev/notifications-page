@@ -9,6 +9,12 @@ const Wrapper = styled.div`
   padding: 25px 15px;
 
   display: grid;
+
+  @media (width >= 720px){
+    width: 650px;
+    margin: 50px auto;
+    border-radius: 10px;
+  }
 `
 
 const Content = styled.div`
