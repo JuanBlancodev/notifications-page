@@ -52,10 +52,20 @@ const GlobalContextProvider = ({ children }) => {
     return null
   }
 
+  const markAsRead = () => {
+    setNotifications(prevNotifications => (
+      prevNotifications.map(notification => ({
+        ...notification,
+        seen: true
+      }))
+    ))
+  }
+
   return (
     <GlobalContext.Provider value={{
       users,
-      notifications
+      notifications,
+      markAsRead
     }}>
       { children }
     </GlobalContext.Provider>

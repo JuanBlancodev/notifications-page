@@ -22,10 +22,14 @@ const Button = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+
+  &:hover{
+    color: var(--color-blue);
+  }
 `
 
 const Header = () => {
-  const { notifications } = useGlobalContext()
+  const { notifications, markAsRead } = useGlobalContext()
   const [pendingNotifications, setPendingNotifications] = useState(0)
 
   useEffect(() => {
@@ -44,7 +48,9 @@ const Header = () => {
         }
       </Title>
 
-      <Button className='btn fs-small fw-normal dark-grayish-blue'>
+      <Button 
+        className='fs-small fw-normal dark-grayish-blue'
+        onClick={() => markAsRead()}>
         Mark all as read
       </Button>
     </HeaderContainer>
