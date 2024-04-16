@@ -34,6 +34,10 @@ html, body{
   height: 100vh;
 }
 
+body{
+  background-color: var(--color-light-grayish-blue-2);
+}
+
 p{
   font-size: var(--font-size-small);
 }
@@ -101,7 +105,6 @@ p{
 .very-dark-blue{
   color: var(--color-very-dark-blue);
 }
-
 
 /* Background color */
 .bg-light-grayish-blue-1{
