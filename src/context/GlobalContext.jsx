@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import styled from 'styled-components'
 import ReactLoading from 'react-loading'
+import ErrorMessage from "../components/ErrorMessage";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -60,7 +61,7 @@ const GlobalContextProvider = ({ children }) => {
   }, [])
 
   if(error !== null){
-    return <h1>{ error }</h1>
+    return <ErrorMessage error={error} />
   }
   else if(users === undefined || notifications === undefined){
     return <Wrapper>

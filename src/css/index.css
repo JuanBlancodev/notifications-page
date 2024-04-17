@@ -192,3 +192,8 @@ p{
 .flex-1{
   flex: 1;
 }
+
+.link{
+  color: unset;
+  text-decoration: none;
+}
