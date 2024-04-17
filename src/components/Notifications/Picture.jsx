@@ -14,16 +14,17 @@ const Img = styled.img`
   object-fit: cover;
 `
 
-const Picture = ({ picture }) => {
+const Picture = ({ picture, handleLoaded }) => {
   return (
     <Container>
-      <Img src={`picture/${picture}`} alt={picture} />
+      <Img src={`picture/${picture}`} alt={picture} onLoad={handleLoaded} />
     </Container>
   )
 }
 
 Picture.propTypes = {
-  picture: PropTypes.string.isRequired
+  picture: PropTypes.string.isRequired,
+  handleLoaded: PropTypes.func.isRequired
 }
 
 export default Picture

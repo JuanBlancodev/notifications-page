@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -6,6 +7,7 @@ import UserName from './UserName'
 import Subject from './Subject'
 import PrivateMessage from './PrivateMessage'
 import Picture from './Picture'
+import ReactLoading from 'react-loading'
 
 const Container = styled.section`
   min-height: 70px;
@@ -17,10 +19,6 @@ const Container = styled.section`
   padding: 10px 5px;
 `
 
-const Content = styled.div`  
- flex: 1;
-`
-
 const Alert = styled.span`
   display: inline-block;
   width: 10px;
@@ -29,21 +27,31 @@ const Alert = styled.span`
 `
 
 const Notification = ({ info, user }) => {
+  const totalImages = info.picture ? 2 : 1
+  const [imagesLoaded, setImagesLoaded] = useState(0)
+
+  const handleLoaded = () => setImagesLoaded(prevImagesLoaded =>  prevImagesLoaded + 1)
+
   return (
     <Container className={!info.seen ? 'bg-light-grayish-blue-1' : ''}>
-      <Avatar avatar={user.avatar} />
-      <Content>
-        <UserName firstName={user.firstName} lastName={user.lastName} />
-        <Subject typeNotification={info.type} messageNotification={info.message} />
-          
-        { !info.seen && <Alert className='bg-red ml-1' /> }
 
-        <p className='fs-xsmall fw-normal grayish-blue mt-1'>{ info.timeAgo }</p>
+      { imagesLoaded !== totalImages && <ReactLoading className='m-auto' type='bars' color='#147af4' width='30px' height='30px' /> }
 
-        { info.type === 'private_message' && <PrivateMessage message={info.privateMessage} /> }
-      </Content>
-
-      { info.picture && <Picture picture={info.picture} /> }
+      <div className={imagesLoaded === totalImages ? 'flex gap-2' : 'none'}>
+        <Avatar avatar={user.avatar} handleLoaded={handleLoaded} />
+        <div className='flex-1'>
+          <UserName firstName={user.firstName} lastName={user.lastName} />
+          <Subject typeNotification={info.type} messageNotification={info.message} />
+                  
+          { !info.seen && <Alert className='bg-red ml-1' /> }
+        
+          <p className='fs-xsmall fw-normal grayish-blue mt-1'>{ info.timeAgo }</p>
+        
+          { info.type === 'private_message' && <PrivateMessage message={info.privateMessage} /> }
+        </div>
+        
+        { info.picture && <Picture picture={info.picture} handleLoaded={handleLoaded} /> }
+      </div>
     </Container>
   )
 }

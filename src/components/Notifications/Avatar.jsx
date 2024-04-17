@@ -20,16 +20,17 @@ const Img = styled.img`
   object-fit: cover;
 `
 
-const Avatar = ({ avatar }) => {
+const Avatar = ({ avatar, handleLoaded }) => {
   return (
     <AvatarContainer>
-      <Img src={`avatar/${avatar}`} alt={avatar} />
+      <Img src={`avatar/${avatar}`} alt={avatar} onLoad={handleLoaded} />
     </AvatarContainer>
   )
 }
 
 Avatar.propTypes = {
-  avatar: PropTypes.string.isRequired
+  avatar: PropTypes.string.isRequired,
+  handleLoaded: PropTypes.func.isRequired
 }
 
 export default Avatar
