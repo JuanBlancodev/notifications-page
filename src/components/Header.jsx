@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useEffect, useState } from 'react'
 import useGlobalContext from '../hooks/useGlobalContext'
 
@@ -23,13 +23,15 @@ const Button = styled.button`
   background: none;
   cursor: pointer;
 
-  &:hover{
-    color: var(--color-blue);
-  }
+  ${props => !props.disabled && css `
+    &:hover{
+      color: var(--color-blue);
+    }
+  `}
 `
 
 const Header = () => {
-  const { notifications, markAsRead } = useGlobalContext()
+  const { notifications, markAllAsRead } = useGlobalContext()
   const [pendingNotifications, setPendingNotifications] = useState(0)
 
   useEffect(() => {
@@ -50,7 +52,8 @@ const Header = () => {
 
       <Button 
         className='fs-small fw-normal dark-grayish-blue'
-        onClick={() => markAsRead()}>
+        onClick={() => markAllAsRead()}
+        disabled={pendingNotifications === 0}>
         Mark all as read
       </Button>
     </HeaderContainer>

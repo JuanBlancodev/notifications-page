@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import useGlobalContext from '../../hooks/useGlobalContext'
 
 import Avatar from './Avatar'
 import UserName from './UserName'
@@ -10,7 +11,7 @@ import PrivateMessage from './PrivateMessage'
 import Picture from './Picture'
 import ReactLoading from 'react-loading'
 
-const Container = styled.section`
+const Container = styled.a`
   min-height: 70px;
   border-radius: 5px;
 
@@ -18,6 +19,9 @@ const Container = styled.section`
   gap: 10px;
 
   padding: 10px 5px;
+
+  color: unset;
+  text-decoration: none;
 `
 
 const Alert = styled.span`
@@ -28,6 +32,7 @@ const Alert = styled.span`
 `
 
 const Notification = ({ info, user }) => {
+  const { markNotificationAsRead } = useGlobalContext()
   const totalImages = info.picture ? 2 : 1
   const [imagesLoaded, setImagesLoaded] = useState(0)
 
@@ -44,7 +49,7 @@ const Notification = ({ info, user }) => {
       { imagesLoaded !== totalImages && 
         <ReactLoading className='m-auto' type='bars' color='#147af4' width='30px' height='30px' 
       /> }
-      <Container className={classNames(class_names)}>
+      <Container href="#" className={classNames(class_names)} onClick={() => markNotificationAsRead(info.id)}>
         <Avatar avatar={user.avatar} handleLoaded={handleLoaded} />
         <div className='flex-1'>
           <UserName firstName={user.firstName} lastName={user.lastName} />

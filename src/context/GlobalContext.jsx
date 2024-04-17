@@ -69,7 +69,7 @@ const GlobalContextProvider = ({ children }) => {
     </Wrapper>
   }
 
-  const markAsRead = () => {
+  const markAllAsRead = () => {
     setNotifications(prevNotifications => (
       prevNotifications.map(notification => ({
         ...notification,
@@ -78,11 +78,24 @@ const GlobalContextProvider = ({ children }) => {
     ))
   }
 
+  const markNotificationAsRead = (id) => {
+    const notificationsUpdated = notifications.map(notification => {
+      if(notification.id === id){
+        return { ...notification, seen: true }
+      }
+
+      return notification
+    })
+
+    setNotifications(notificationsUpdated)
+  }
+
   return (
     <GlobalContext.Provider value={{
       users,
       notifications,
-      markAsRead
+      markAllAsRead,
+      markNotificationAsRead
     }}>
       { children }
     </GlobalContext.Provider>
