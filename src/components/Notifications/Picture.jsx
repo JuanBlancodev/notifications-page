@@ -2,8 +2,12 @@ import styled from "styled-components"
 import PropTypes from 'prop-types'
 
 const Container = styled.div`
+  min-width: 50px;
   width: 50px;
+  
+  min-height: 50px;
   height: 50px;
+
   border-radius: 10px;
   overflow: hidden;
 `

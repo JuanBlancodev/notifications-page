@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import Avatar from './Avatar'
 import UserName from './UserName'
@@ -32,27 +33,33 @@ const Notification = ({ info, user }) => {
 
   const handleLoaded = () => setImagesLoaded(prevImagesLoaded =>  prevImagesLoaded + 1)
 
+  const class_names = {
+    'bg-light-grayish-blue-1': !info.seen,
+    'flex gap-2': imagesLoaded === totalImages,
+    'none': imagesLoaded < totalImages
+  }
+
   return (
-    <Container className={!info.seen ? 'bg-light-grayish-blue-1' : ''}>
-
-      { imagesLoaded !== totalImages && <ReactLoading className='m-auto' type='bars' color='#147af4' width='30px' height='30px' /> }
-
-      <div className={imagesLoaded === totalImages ? 'flex gap-2' : 'none'}>
+    <>
+      { imagesLoaded !== totalImages && 
+        <ReactLoading className='m-auto' type='bars' color='#147af4' width='30px' height='30px' 
+      /> }
+      <Container classNames={classNames(class_names)}>
         <Avatar avatar={user.avatar} handleLoaded={handleLoaded} />
         <div className='flex-1'>
           <UserName firstName={user.firstName} lastName={user.lastName} />
           <Subject typeNotification={info.type} messageNotification={info.message} />
-                  
+                    
           { !info.seen && <Alert className='bg-red ml-1' /> }
-        
+          
           <p className='fs-xsmall fw-normal grayish-blue mt-1'>{ info.timeAgo }</p>
-        
+          
           { info.type === 'private_message' && <PrivateMessage message={info.privateMessage} /> }
         </div>
-        
+          
         { info.picture && <Picture picture={info.picture} handleLoaded={handleLoaded} /> }
-      </div>
-    </Container>
+      </Container>
+    </>
   )
 }
 
