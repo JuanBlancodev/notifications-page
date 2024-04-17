@@ -44,7 +44,7 @@ const Notification = ({ info, user }) => {
       { imagesLoaded !== totalImages && 
         <ReactLoading className='m-auto' type='bars' color='#147af4' width='30px' height='30px' 
       /> }
-      <Container classNames={classNames(class_names)}>
+      <Container className={classNames(class_names)}>
         <Avatar avatar={user.avatar} handleLoaded={handleLoaded} />
         <div className='flex-1'>
           <UserName firstName={user.firstName} lastName={user.lastName} />
